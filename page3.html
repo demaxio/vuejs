@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+        <title>Vue.js APP</title>
+        <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
+        <link rel="stylesheet" href="assets/css/styles.min.css">
+    </head>
+    <body style="background-color: rgb(192,239,249);padding-top: 0px;">
+        <div>
+            <div class="sidebar" style="background-color: rgb(10,34,40);">
+                <div class="dismiss" style="color: #ffffff;background-color: rgba(68,68,68,0);padding-top: 0px;">
+                    <i class="fa fa-plus-circle" style="margin-top: 0px;padding-top: 13px;color: rgb(88,113,118);"></i>
+                </div>
+                <div class="brand" style="padding-top: 10px;padding-bottom: 0px;">
+                    <div class="table-responsive table-borderless">
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th style="padding-top: 0px;padding-bottom: 19px;padding-left: 0px;padding-right: 0px;opacity: 1;">
+                                        <img style="width: 40px;height: 40px;padding-top: 0px; border-radius:5px;" src="https://delovoi-etiket.ru/wp-content/uploads/2014/07/2.novo.jpg">
+                                    </th>
+                                    <th style="padding-bottom: 0px;">
+                                        <div id ="app">
+                                            <span class="text-center" style="color: rgb(255,255,255);margin-top: 0px;margin-right: 0px;margin-left: 0px;margin-bottom: 0px;font-size: 16px;">{{ name }}</span>
+                                        <p class="text-left" style="color: rgb(88,113,118);margin: 16 px;width: 80px;">{{ status }}</p>
+                                     </div>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr></tr>
+                                <tr></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div></div>
+                </div>
+                <nav class="navbar navbar-dark navbar-expand">
+                    <div class="container-fluid" id="app1">
+                        <ul class="nav navbar-nav mr-auto flex-column mr-auto">
+                            <li class="nav-item" role="presentation">
+                                <a class="nav-link active" href="index.html" style="font-weight: bold;">MESSAGES<p style="color: rgb(138,138,138);font-weight: normal;">history</p></a>
+                            </li>
+
+                            <li class="nav-item" role="presentation">
+                                <a class="nav-link" href="index.html" style="padding: 5px;">{{ blog1 }} (85)</a>
+                            </li>
+
+                            <li class="nav-item" role="presentation">
+                                <a class="nav-link" href="index.html" style="padding: 5px;">{{ blog2 }} (911)</a>
+                                <a class="nav-link" href="page2.html" style="padding: 5px;">{{ blog3 }}(1185)<br></a>
+                                <a class="nav-link active" href="page2.html" style="padding: 5px;background-color:#3ea2ff;border-radius:5px;">{{ blog4 }}<br></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div id="app3" style="padding-top: 10px;">
+                        <ul class="nav navbar-nav mr-auto flex-column mr-auto">
+                            <button @click="add" type="button" class="btn btn-info">Add a section</button>
+                            <li v-for="component in arr"> 
+                                <component-a :item="component"></component-a> 
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+            <div class="overlay"></div>
+        </div>
+        <div id="app2">
+        <div class="shadow" style="background-color: #ffffff;margin-left: 250px;height: 103px;padding-top: 0px;">
+            <div class="table-responsive table-borderless" style="height: 113px;">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th style="height: 76px;padding-bottom: 0;padding-top: 8px;width: auto;">
+                                <span class="text-center" style="color: rgb(27,31,31);margin-top: 0px;margin-right: 0px;margin-left: 30px;margin-bottom: 0px;font-size: 22px;font-weight: bold;padding: 0px;padding-top: 0px;">Questions Manager</span>
+                                <div class="table-responsive">
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th style="width: 120px;height: 20px;padding: 0px;"><p class="text-left" style="color: rgb(88,113,118);margin: 0 px;width: 120px;margin-left: 30px;"><i class="fa fa-sort-down" style="height: 20px;width: 20px;margin-top: 0px;padding-top: 0px;"></i>All questions</p></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody></tbody>
+                                    </table>
+                                </div>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+        <div></div>
+        <div class="border rounded border-white shadow" style="background-color: rgb(255,255,255);margin-left: 340px;height: 135px;padding-top: 0px;color: rgb(255,255,255);width: auto;margin-right: 100px;margin-top: 20px;">
+            <div class="table-responsive" style="height: 150px;margin-left: 15px;width: auto;">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                    <th class="border-white" style="width: auto;max-width: 30px;padding-bottom: 0px;background-color: #3ea2ff;color:white;overflow: hidden;white-space: nowrap;border-radius:5px;">
+                                         Q{{ number }}
+                                    </th>
+                                    <th class="border-white" style="width: auto;max-width: 200px;font-weight: normal;color: rgb(0,0,0);padding-bottom: 0px;">Hello what is delivery time?
+                                </th>
+                            </tr>
+                        </thead>
+                    <tbody>
+                        <tr></tr>
+                        <tr>
+                            <td style="padding-bottom: 5px;width: auto;max-width: 30px;background-color: #e0e5e7;min-width: 30px;border-radius:5px 5px 0 0px;"></td>
+                            <td class="border-white" style="padding-bottom: 5px;width: auto;height: 30px;"></td>
+                            <td class="border-white" style="padding-bottom: 5px;width: auto;"></td>
+                        </tr>
+                        <tr>
+                            <td style="padding-bottom: 0px;width: auto;max-width: 30px;background-color: #e0e5e7;height: 54px;margin-left: 0;padding-bottom: 0px;white-space: nowrap;border-radius:5px;">{{ time }}</td>
+                            <td class="border-white" style="padding-bottom: 5px;width: auto;max-width: 200px;">Guest, 4:30 AM</td>
+                            <style type="text/css">
+                                .fa-plus-square:hover {
+                                color: red;
+                                cursor: pointer;}
+
+</style>
+                            <td class="border-white" style="padding-bottom: 5px;padding-right: 0px;padding-left: 0px;height: 50px;width: auto;">
+                                <!--<img style="width: 40px;height: 40px;padding-top: 0px;margin-right:10px;">-->
+                                <i class="fa fa-plus-square" style="margin-top: 0px;padding-top: 0px;width: 33px;height: 30px;padding-left: 0px;font-size: 30px;"></i>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="border rounded border-white shadow" style="background-color: rgb(255,255,255);margin-left: 340px;height: 145px;padding-top: 0px;color: rgb(255,255,255);width: auto;margin-right: 100px;margin-top: 20px;">
+            <div class="table-responsive" style="height: 151px;margin-left: 15px;width: auto;">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th class="border-white" style="width: auto;max-width: 30px;padding-bottom: 0px;background-color:green;color:white;overflow: hidden;white-space: nowrap;border-radius:5px;">
+                                Q{{ number - 1 }}
+                            </th>
+                            <th class="border-white" style="width: auto;max-width: 200px;font-weight: normal;color: rgb(0,0,0);padding-bottom: 0px;">Hi, do you have this item in stock?</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr></tr>
+                        <tr>
+                            <td style="padding-bottom: 0px;width: auto;max-width: 30px;background-color: green;min-width: 30px;border-radius:5px;">
+                                <img style="width: 20px;height: 20px;margin-bottom: 5px; border-radius:5px;" src="src/check.png">
+                            </td>
+                            <td class="border-white" style="padding-bottom: 5px;width: auto;height: 25px;"></td>
+                            <td class="border-white" style="padding-bottom: 5px;width: auto;"></td>
+                        </tr>
+                        <tr>
+                            <td style="width: auto;max-width: 30px;background-color: green;height: 54px;margin-left: 0;padding-bottom: 0px;white-space: nowrap;color:white;border-radius:5px;">{{ time2 }}</td>
+                            <td class="border-white" style="padding-bottom: 5px;width: auto;max-width: 200px;">Guest, 1:33 AM</td>
+                            <td class="border-white" style="padding-bottom: 5px;padding-right: 0px;padding-left: 0px;height: 50px;width: auto;">
+
+                                <!--<img style="width: 40px;height: 40px;padding-top: 0px;margin-right:10px;">-->
+                                <i class="fa fa-plus-square" style="margin-top: 0px;padding-top: 0px;color: rgb(255,255,255);width: 33px;height: 30px;padding-left: 0px;font-size: 30px;"></i>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="border rounded border-white shadow" style="background-color: rgb(255,255,255);margin-left: 340px;height: 145px;padding-top: 0px;color: rgb(255,255,255);width: auto;margin-right: 100px;margin-top: 20px;">
+            <div class="table-responsive" style="height: 155px;margin-left: 15px;width: auto;">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th class="border-white" style="width: auto;max-width: 30px;padding-bottom: 0px;background-color:green;color:white;overflow: hidden;white-space: nowrap;border-radius:5px;">
+                                Q{{ number - 2 }}
+                            </th>
+                            <th class="border-white" style="width: auto;max-width: 200px;font-weight: normal;color: rgb(0,0,0);padding-bottom: 0px;">Hello what is delivery time?</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr></tr>
+                        <tr>
+                            <td style="padding-bottom: 0px;width: auto;max-width: 30px;background-color: green;min-width: 30px;border-radius:5px;">
+                                <img style="width: 20px;height: 20px;margin-bottom: 5px; border-radius:5px;" src="src/check.png">
+                            </td>
+                            <td class="border-white" style="padding-bottom: 5px;width: auto;height: 30px;"></td>
+                            <td class="border-white" style="padding-bottom: 5px;width: auto;"></td>
+                        </tr>
+                        <tr>
+                            <td style="width: auto;max-width: 30px;background-color: green;height: 48px;margin-left: 0;padding-bottom: 0px;white-space: nowrap;color:white;border-radius:5px;">{{ time2 }}</td>
+                            <td class="border-white" style="padding-bottom: 5px;width: auto;min-width: 200px;">Guest, 11:33 PM - 10 Oct</td>
+                            <td class="border-white" style="padding-bottom: 5px;padding-right: 0px;padding-left: 0px;height: 50px;width: auto; max-width:10px;">
+                                <img style="width: 40px;height: 40px;padding-top: 0px;border-radius: 5px;" src="https://pbs.twimg.com/media/D6w1wBiX4AALpcq.jpg">
+                            </td>
+                            <td class="border-white" style="padding-bottom: 5px;padding-right: 0px;padding-left: 0px;height: 50px;width: auto; max-width:40px;"><i class="fa fa-lg fa-comment" style="margin-top: 0px;padding-top: 0px;color: rgb(255,255,255);;font-size: 30px;"></i></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="border rounded border-white shadow" style="background-color: rgb(255,255,255);margin-left: 340px;height: 145px;padding-top: 0px;color: rgb(255,255,255);width: auto;margin-right: 100px;margin-top: 20px;">
+            <div class="table-responsive" style="height: 152px;margin-left: 15px;width: auto;">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th class="border-white" style="width: auto;max-width: 30px;padding-bottom: 0px;background-color: #3ea2ff;color:white;overflow: hidden;white-space: nowrap;border-radius:5px;">
+                                             Q{{ number - 3 }}
+                                </th>
+                            <th class="border-white" style="width: auto;max-width: 200px;font-weight: normal;color: rgb(0,0,0);padding-bottom: 0px;">Hello what is delivery time?</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr></tr>
+                        <tr>
+                            <td style="padding-bottom: 5px;width: auto;max-width: 30px;background-color: #e0e5e7;min-width: 30px;border-radius:5px 5px 0 0px;"></td>
+                            <td class="border-white" style="padding-bottom: 5px;width: auto;height: 30px;"></td>
+                            <td class="border-white" style="padding-bottom: 5px;width: auto;"></td>
+                        </tr>
+                        <tr>
+                            <td style="padding-bottom: 0px;width: auto;max-width: 30px;background-color: #e0e5e7;height: 54px;margin-left: 0;padding-bottom: 0px;white-space: nowrap;border-radius:5px;">
+                                {{ time3 }}</td>
+                            <td class="border-white" style="padding-bottom: 5px;width: auto;max-width: 200px;">Guest, 10:34 PM - 10 Oct</td>
+                            <td class="border-white" style="padding-bottom: 5px;padding-right: 0px;padding-left: 0px;height: 50px;width: auto;">
+                                <!--<img style="width: 40px;height: 40px;padding-top: 0px;margin-right:10px;">-->
+                                <i class="fa fa-plus-square" style="margin-top: 0px;padding-top: 0px;color: rgb(255,255,255);width: 33px;height: 30px;padding-left: 0px;font-size: 30px;"></i>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+        <script src="assets/js/jquery.min.js"></script>
+        <script src="assets/js/main.js"></script>
+        <script type="text/javascript" src="assets/js/vue.js"></script>
+        <!--<script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>-->
+        <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+        <script src="assets/js/script.min.js"></script>
+    </body>
+</html>
